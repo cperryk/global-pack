@@ -1,4 +1,4 @@
-const globalPack = require('./index'),
+const globalPack = require('../index'),
   _ = require('highland'),
   expect = require('chai').expect,
   Linter = require('eslint').Linter,
