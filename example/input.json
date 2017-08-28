@@ -1,0 +1,13 @@
+[
+  {
+    "id": "a",
+    "source": "module.exports = function () { require('b')() }",
+    "deps": { "b": "b" },
+    "entry": true
+  },
+  {
+    "id": "b",
+    "source": "module.exports = function () { console.log('b') }",
+    "deps": {}
+  }
+]

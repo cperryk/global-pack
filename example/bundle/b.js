@@ -1,0 +1,1 @@
+window.modules["b"] = [function(require,module,exports){module.exports = function () { console.log('b') }}, {}]
