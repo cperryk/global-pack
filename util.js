@@ -5,8 +5,7 @@ function getPrelude(scope) {
 }
 
 function getModuleString(dep, scope) {
-  const path = `./bundle/${dep.id}.js`,
-    depsString = JSON.stringify(dep.deps),
+  const depsString = JSON.stringify(dep.deps),
     srcString = combineSourceMap.removeComments(dep.source);
 
   return `${scope}["${dep.id}"] = [function(require,module,exports){${srcString}}, ${depsString}];`;

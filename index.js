@@ -1,6 +1,4 @@
 const through = require('through2'),
-  input = require('./example/input'),
-  fs = require('fs'),
   util = require('./util');
 
 /**
