@@ -64,4 +64,29 @@ describe('index', function () {
       done();
     });
   });
+  it ('emits objects if objectMode is set', function (done) {
+    _(TEST_INPUT).through(globalPack({objectMode: true})).toArray((results)=>{
+      expect(results[0]).to.eql({
+        id: 'preface',
+        content: expectedOut[0]
+      });
+      expect(results[1]).to.eql({
+        source: 'require(\'./b\');',
+        deps: {'./b': 'b'},
+        id: 'a',
+        content: expectedOut[1]
+      });
+      expect(results[2]).to.eql({
+        source: 'console.log("b")',
+        deps: {},
+        id: 'b',
+        content: expectedOut[2]
+      });
+      expect(results[3]).to.eql({
+        id: 'preface',
+        content: expectedOut[3]
+      });
+    });
+    done();
+  });
 });
