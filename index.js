@@ -7,6 +7,7 @@ const through = require('through2'),
  * and emits global pack strings.
  * @param {object} [opts]
  * @param {string} [opts.scope='modules'] Property of window to contain modules
+ * @param {boolean} [opts.objectMode]
  * @returns {Stream} of JS strings
  */
 function globalPack({scope = 'window.modules', objectMode = false} = {}) {
